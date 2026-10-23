@@ -1,0 +1,375 @@
+/* Histórias na Pérola — tela de leitura do usuário */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #edf5e9;
+    color: #20231c;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.conteudo {
+    width: min(100% - 48px, 1180px);
+    margin: 0 auto;
+    padding: 42px 0 64px;
+}
+
+h1 {
+    margin: 0;
+    padding-left: 12px;
+    border-left: 5px solid #465722;
+    font-size: clamp(25px, 3vw, 32px);
+    line-height: 1.2;
+}
+
+.subtitulo {
+    margin: 9px 0 25px 17px;
+    color: #4d5148;
+    font-size: 15px;
+}
+
+.modal-historia {
+    position: relative;
+    width: min(100%, 850px);
+    margin: 0 auto;
+    padding: clamp(22px, 4vw, 44px);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 26px rgba(30, 45, 20, 0.12);
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    text-decoration: none;
+}
+
+.icon-close {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ff4d4d;
+    color: #fff;
+    font-size: 21px;
+}
+
+.titulo-lenda {
+    margin: 4px 38px 24px;
+    text-align: center;
+    font-size: clamp(21px, 2.6vw, 28px);
+}
+
+.box-imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    border-radius: 10px;
+    background: #dcded7;
+    color: #606457;
+}
+
+.box-imagem img {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+}
+
+.legenda {
+    margin: 10px 0 24px;
+    color: #62665d;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.texto-lenda {
+    margin-bottom: 30px;
+    color: #30332c;
+    font-size: 15px;
+    line-height: 1.85;
+    overflow-wrap: anywhere;
+    text-align: justify;
+}
+
+/* Seção de idiomas */
+
+.secao-idiomas {
+    margin-top: 28px;
+    padding: 22px;
+    border: 1px solid #e3e6df;
+    border-radius: 10px;
+    background: #fbfcfa;
+}
+
+.titulo-idiomas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.titulo-idiomas img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+
+.subtitulo-idiomas {
+    margin: 0 0 17px;
+    color: #62665d;
+    font-size: 13px;
+}
+
+.botoes-idiomas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn-idioma {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 42px;
+    padding: 9px 16px;
+    border: 1px solid #cdd1c7;
+    border-radius: 7px;
+    background: #fff;
+    color: #292d25;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.btn-idioma.ativo {
+    border-color: #c99829;
+    background: #c99829;
+    color: #fff;
+}
+
+.btn-idioma img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
+.img-espanha {
+    object-fit: cover !important;
+}
+
+.img-wari {
+    width: 23px !important;
+    height: 23px !important;
+}
+
+/* Campo para escrever comentários */
+
+.secao-comentario {
+    display: grid;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.titulo-comentario {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.area-texto-comentario {
+    width: 100%;
+    min-height: 105px;
+    resize: vertical;
+    padding: 13px 14px;
+    border: 1px solid #cfd4c8;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 14px;
+}
+
+.btn-enviar {
+    justify-self: start;
+    min-height: 40px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 7px;
+    background: #465722;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.aviso-comentario {
+    margin: 0;
+    color: #777b70;
+    font-size: 12px;
+}
+
+/* Lista de comentários */
+
+.lista-comentarios {
+    margin-top: 34px;
+}
+
+.titulo-lista-comentarios {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e3e6df;
+    font-size: 16px;
+}
+
+.sem-comentarios {
+    padding: 18px 0;
+    color: #62665d;
+    font-size: 14px;
+}
+
+.comentario-item {
+    display: flex;
+    gap: 13px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e3e6df;
+}
+
+.comentario-item:last-child {
+    border-bottom: 0;
+}
+
+.avatar-comentario {
+    display: flex;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #465722;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.corpo-comentario {
+    flex: 1;
+    min-width: 0;
+}
+
+.cabecalho-comentario {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+}
+
+.nome-comentario {
+    color: #252820;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.data-comentario {
+    color: #7b7f75;
+    font-size: 11px;
+}
+
+.texto-comentario {
+    margin: 6px 0 10px;
+    color: #373a33;
+    font-size: 13px;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+/* Botão para excluir comentário */
+
+.form-excluir-comentario {
+    margin: 8px 0 0;
+}
+
+.btn-excluir-comentario {
+    padding: 6px 12px;
+    border: 1px solid #c83c3c;
+    border-radius: 6px;
+    background: #fff;
+    color: #b42323;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-excluir-comentario:hover {
+    background: #fff0f0;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #2467c7;
+    outline-offset: 3px;
+}
+
+/* Ajustes para celulares */
+
+@media (max-width: 600px) {
+    .conteudo {
+        width: min(100% - 28px, 1180px);
+        padding: 28px 0 42px;
+    }
+
+    .modal-historia {
+        padding: 25px 17px;
+    }
+
+    .titulo-lenda {
+        margin: 8px 34px 20px;
+    }
+
+    .box-imagem {
+        min-height: 165px;
+    }
+
+    .texto-lenda {
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .secao-idiomas {
+        padding: 16px;
+    }
+
+    .botoes-idiomas {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .btn-idioma {
+        width: 100%;
+    }
+
+    .comentario-item {
+        gap: 10px;
+    }
+
+    .avatar-comentario {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

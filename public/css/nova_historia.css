@@ -1,0 +1,708 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #eef2e6;
+}
+
+
+
+
+.container {
+    width: 100%;
+    padding: 110px 49px 50px;
+}
+
+
+.titulo-pagina h1 {
+
+    font-size: 30px;
+    color: #1b2b16;
+    border-left: 5px solid #486b2d;
+    padding-left: 12px;
+    margin-bottom: 5px;
+}
+
+.titulo-pagina p {
+
+    color: #000000;
+    margin-bottom: 35px;
+    margin-top: 8px;
+    margin-left: 14px;
+    font-size: 16px;
+    line-height: 1.4;}
+
+
+
+
+.card {
+
+    width: 680px;
+    max-width: 100%;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .15);
+    padding: 30px;
+}
+
+
+
+.card h2 {
+
+    text-align: center;
+    color: #333;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.card > span {
+    display: block;
+    text-align: left;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 15px;
+    margin-bottom: 0;
+    
+}
+
+
+#formHistoria > span {
+    
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 25px auto 0;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.idiomas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 30px;
+}
+
+
+
+.idiomas button {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 6px 12px;
+
+    border: 1px solid #ccc;
+
+    background: #FFFFFF;
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+
+    border-radius: 8px;
+
+    white-space: nowrap;
+
+    height: 34px;
+}
+
+
+
+
+.idiomas button img {
+    display: block;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+
+
+
+.idiomas button:nth-child(1) img {
+    width: 25px;
+
+    height: 18px;
+
+    object-fit: cover;
+}
+
+
+
+
+.idiomas button:nth-child(2) img {
+    width: 30px;
+
+    height: 20px;
+
+    object-fit: cover;
+
+    transform: scale(1.20);
+}
+
+
+
+
+.idiomas .idioma-wari {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+
+
+.idiomas .idioma-wari img {
+    width: 24px;
+
+    height: 24px;
+
+    object-fit: contain;
+
+    display: block;
+
+    flex-shrink: 0;
+
+    transform: scale(2.20);
+}
+
+
+
+
+.idiomas button span {
+
+    display: inline-block;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+
+
+
+.idiomas button.ativo {
+    background: #d4aa2a;
+
+    color: white;
+
+    border-color: #c79b21;
+}
+
+
+
+
+.linha {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-end;
+}
+
+
+
+
+#categoria {
+    width: 185px;
+}
+
+#titulo{
+    width: 260px;
+}
+
+#legenda {
+    width: 310px;
+}
+
+
+
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+
+    margin-bottom: 20px;
+}
+
+
+
+
+label {
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    color: #444;
+}
+
+
+
+
+input {
+    height: 30px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+    padding: 5px 8px;
+
+    outline: none;
+
+}
+
+
+
+
+select {
+    height: 30px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+    padding: 5px 8px;
+
+    outline: none;
+
+    background: white;
+
+}
+
+
+
+
+textarea {
+    width: 100%;
+
+    height: 170px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+    padding: 8px;
+
+    outline: none;
+
+    resize: none;
+
+}
+
+
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #b58c16;
+}
+
+
+
+
+.btnImagem {
+    background: white;
+
+    border: 1px solid #ccc;
+
+    color: #BE9628;
+
+    padding: 6px 10px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    width: 150px;
+
+    height: 30px;
+
+    white-space: nowrap;
+}
+
+
+
+
+.btnImagem:hover {
+    background: #BE9628;
+
+    border-color: #BE9628;
+
+    color: white;
+}
+
+
+
+
+.acoes {
+    display: flex;
+
+    gap: 330px;
+
+    margin-left: 20px;
+}
+
+
+
+
+.cancelar {
+
+    background: #be9628;
+    background-color: white;
+    color: #c79b21;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    transition: .3s;
+}
+
+.cancelar a {
+    color: #c79b21;
+
+    text-decoration: none;
+}
+
+.cancelar:hover {
+    background: #c79b21;
+
+    color: white;
+}
+
+.cancelar:hover a {
+    color: white;
+}
+
+
+
+
+.salvar {
+
+  background: #be9628;
+    background-color: white;
+    color: #c79b21;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    transition: .3s;
+       
+       
+}
+
+.salvar:hover {
+    
+    background: #c79b21;
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 85px 25px 40px;
+    }
+
+
+    
+
+    .titulo-pagina h1 {
+        font-size: 28px;
+    }
+
+    .titulo-pagina p {    font-size: 16px;
+
+        margin-bottom: 25px;
+    margin-top: 8px;
+    margin-left: 14px;
+    line-height: 1.4;}
+
+
+    
+
+    .card {
+        width: 100%;
+
+        padding: 25px;
+    }
+
+
+    
+
+    .linha {
+        flex-direction: row;
+
+        gap: 15px;
+    }
+
+
+    .campo {
+        width: auto;
+    }
+
+
+    .imagem {
+        align-items: flex-start;
+    }
+
+
+    .btnImagem {
+        width: 150px;
+    }
+
+
+    
+
+    .idiomas {
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+
+    .container {
+        padding: 80px 15px 35px;
+    }
+
+
+    
+
+    .titulo-pagina {
+        display: block;
+    }
+
+    .titulo-pagina h1 {    
+        font-size: 28px;
+        padding-left: 9px;
+        margin-bottom: 5px;
+        line-height: 31px;
+        font-weight: 700;
+        border-left: 5px solid #465722;
+        margin: 0;
+    }
+
+    .titulo-pagina p {    
+        font-size: 16px;
+        margin-bottom: 22px;
+        margin-top: 8px;
+        margin-left: 14px;
+        line-height: 1.4;
+    }
+
+
+    
+
+    .card {
+        width: 100%;
+
+        padding: 20px 15px;
+
+        border-radius: 7px;
+    }
+
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card > span {
+        font-size: 13px;
+
+        margin-bottom: 20px;
+    }
+
+
+    
+
+    .idiomas {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+    }
+
+    .idiomas button {
+        width: 100%;
+
+        height: 34px;
+
+        padding: 6px 12px;
+
+        display: flex;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    
+
+    .idiomas button:nth-child(1) img {
+        width: 30px;
+
+        height: 20px;
+    }
+
+
+    
+
+    .idiomas button:nth-child(2) img {
+        width: 30px;
+
+        height: 20px;
+
+        transform: scale(1.15);
+    }
+
+
+    
+
+    .idiomas .idioma-wari {
+        flex-direction: row;
+    }
+
+    .idiomas .idioma-wari img {
+        width: 24px;
+
+        height: 24px;
+
+        transform: scale(2.25);
+    }
+
+
+    .idiomas button span {
+        display: inline-block;
+
+        white-space: nowrap;
+
+        line-height: 1;
+    }
+
+
+    
+
+    .linha {
+        flex-direction: column;
+
+        gap: 0;
+
+        width: 100%;
+    }
+
+    .campo {
+        width: 100%;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 14px;
+    }
+
+    #categoria,
+    #titulo,
+    #legenda {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+
+        height: 150px;
+    }
+
+
+    
+
+    .btnImagem {
+        width: 100%;
+
+        height: 30px;
+    }
+
+
+    
+
+    .acoes {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        gap: 15px;
+
+        margin-left: 0;
+    }
+
+
+    .cancelar,
+    .salvar {
+        width: 50%;
+
+        padding: 11px 10px;
+
+        font-size: 14px;
+    }
+
+}

@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="<?= URL ?>/public/css/cadastro_user.css">
+
+    <style>
+        .erro-campo {
+            display: block;
+            color: #ff0000 !important;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: left;
+            margin: 4px 0 10px;
+            padding: 0;
+        }
+
+        .erro-campo:empty {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="lado-direito">
+        <img src="<?= URL ?>/public/img/icone_logo_menu.png" alt="Logo">
+        <h2>HISTÓRIAS NA PÉROLA</h2>
+        <p>Conectando culturas através de línguas.</p>
+    </div>
+
+    <div class="formulario">
+        <h1>Crie sua conta!</h1>
+        <p>Cadastre-se para continuar</p>
+
+        <?php Sessao::exibirFlash(); ?>
+
+        <form id="form-cadastro"
+              action="<?= URL ?>/usuarios/cadastro_user"
+              method="POST">
+
+            <label for="nome">Nome completo</label>
+            <input
+                type="text"
+                id="nome"
+                name="nome"
+                maxlength="100"
+                value="<?= Html::e($_SESSION['antigo_nome'] ?? '') ?>"
+                placeholder="Digite seu nome"
+                autocomplete="name"
+                required
+            >
+            <small class="erro-campo" id="erro-nome"></small>
+
+            <label for="email">E-mail</label>
+            <input
+                type="text"
+                id="email"
+                name="email"
+                maxlength="100"
+                value="<?= Html::e($_SESSION['antigo_email'] ?? '') ?>"
+                autocomplete="email"
+                placeholder="Digite seu e-mail"
+                required
+            >
+            <small class="erro-campo" id="erro-email"></small>
+
+            <label for="senha">Senha</label>
+            <input
+                type="password"
+                id="senha"
+                name="senha"
+                minlength="8"
+                maxlength="30"
+                placeholder="Digite sua senha"
+                autocomplete="new-password"
+                required
+            >
+            <small class="erro-campo" id="erro-senha"></small>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <p class="login">
+            Já tem uma conta?
+            <a href="<?= URL ?>/usuarios/login_user">Entrar</a>
+        </p>
+    </div>
+
+</div>
+
+<script src="<?= URL ?>/public/js/filtro-caracteres.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const formulario = document.getElementById("form-cadastro");
+    const nome = document.getElementById("nome");
+    const email = document.getElementById("email");
+    const senha = document.getElementById("senha");
+
+    const erroNome = document.getElementById("erro-nome");
+    const erroEmail = document.getElementById("erro-email");
+    const erroSenha = document.getElementById("erro-senha");
+
+    function emailValido(valor) {
+        return /^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,}$/.test(valor);
+    }
+
+    function nomeValido(valor) {
+        return /^[a-zA-ZÀ-ÿ\s'-]+$/.test(valor.trim())
+            && valor.trim().length >= 2;
+    }
+
+    // Validação do nome
+    nome.addEventListener("input", function () {
+        if (!this.value.trim()) {
+            erroNome.textContent = "";
+        } else if (!nomeValido(this.value)) {
+            erroNome.textContent =
+                "Digite um nome com pelo menos 2 caracteres, usando apenas letras.";
+        } else {
+            erroNome.textContent = "";
+        }
+    });
+
+    // Validação do e-mail e bloqueio de símbolos proibidos
+    email.addEventListener("input", function () {
+        const inicio = this.selectionStart;
+
+        this.value = this.value.replace(/[^a-zA-Z0-9.@]/g, "");
+
+        if (inicio !== null) {
+            const posicao = Math.min(inicio, this.value.length);
+            this.setSelectionRange(posicao, posicao);
+        }
+
+        if (!this.value) {
+            erroEmail.textContent = "";
+        } else if (!emailValido(this.value)) {
+            erroEmail.textContent =
+                "Digite um e-mail válido. Exemplo: nome@email.com";
+        } else {
+            erroEmail.textContent = "";
+        }
+    });
+
+    // Validação da senha
+    senha.addEventListener("input", function () {
+        if (this.value.length === 0) {
+            erroSenha.textContent = "";
+        } else if (this.value.length < 8) {
+            erroSenha.textContent =
+                "A senha precisa ter pelo menos 8 caracteres.";
+        } else {
+            erroSenha.textContent = "";
+        }
+    });
+
+    // Validação antes de enviar o formulário
+    formulario.addEventListener("submit", function (evento) {
+        let valido = true;
+
+        if (!nomeValido(nome.value)) {
+            erroNome.textContent =
+                "Digite um nome com pelo menos 2 caracteres, usando apenas letras.";
+            valido = false;
+        }
+
+        if (!emailValido(email.value)) {
+            erroEmail.textContent =
+                "Digite um e-mail válido. Exemplo: nome@email.com";
+            valido = false;
+        }
+
+        if (senha.value.length < 8 || senha.value.length > 30) {
+            erroSenha.textContent =
+                "A senha precisa ter entre 8 e 30 caracteres.";
+            valido = false;
+        }
+
+        if (!valido) {
+            evento.preventDefault();
+        }
+    });
+});
+</script>
+
+<?php unset($_SESSION['antigo_nome'], $_SESSION['antigo_email']); ?>
+</body>
+</html>

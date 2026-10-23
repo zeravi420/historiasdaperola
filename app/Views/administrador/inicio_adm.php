@@ -1,0 +1,104 @@
+<?php
+$nome = Sessao::nome() !== '' ? Sessao::nome() : 'Nome';
+?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Início - Histórias na Pérola</title>
+
+    <link rel="stylesheet" href="<?=URL?>/public/css/inicio_adm.css">
+</head>
+
+<body>
+
+    <?php include APP . '/Views/administrador/menu_adm.php'; ?>
+
+    <main class="conteudo">
+
+        
+        <div class="titulo">
+            <h1>Início</h1>
+        </div>
+
+        
+        <?php Sessao::exibirFlash(); ?>
+
+
+        
+        <p class="boas-vindas">
+            Bem-vindo, <?php echo htmlspecialchars($nome); ?>!
+        </p>
+
+        
+        <h2>
+            Explore, conheça e valorize histórias em diferentes línguas!
+        </h2>
+
+        
+        <div class="cards-inicio">
+
+            
+            <section class="card card-mito">
+
+                <h3>
+                    Existe diferença entre lenda e mito?
+                </h3>
+
+                <div class="texto-card">
+
+                    <p>
+                        Sim! Apesar de serem histórias tradicionais transmitidas
+                        de geração em geração, mitos e lendas possuem algumas
+                        diferenças. Os mitos geralmente estão ligados a deuses,
+                        seres sobrenaturais e explicações sobre a origem do mundo,
+                        da natureza ou de determinados acontecimentos.
+                    </p>
+
+                    <p>
+                        Já as lendas costumam misturar fatos reais com elementos
+                        fantásticos e estão relacionadas à cultura, aos costumes
+                        e às histórias de um povo.
+                    </p>
+
+                    <p>
+                        Ambos fazem parte da cultura e da tradição de diferentes
+                        comunidades, ajudando a preservar histórias, conhecimentos
+                        e valores ao longo do tempo.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            
+            <section class="card card-gerenciar">
+
+                <h3>
+                    Gerencie as histórias da Pérola
+                </h3>
+
+                <p>
+                    Aqui você pode editar histórias existentes, adicionar 
+                    novas histórias ou excluir histórias da plataforma.
+                </p>
+
+                <a href="<?=URL?>/administrador/gerenciar_historia_adm" class="btn-historias">
+                    Gerenciar histórias
+                </a>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <?php include APP . '/Views/administrador/footer_adm.php'; ?>
+
+</body>
+
+</html>

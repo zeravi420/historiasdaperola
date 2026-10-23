@@ -1,0 +1,362 @@
+/* Histórias na Pérola — tela de histórias do administrador */
+
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #edf5e9;
+    color: #111;
+    line-height: 1.5;
+}
+
+.conteudo {
+    padding: 70px 49px 80px;
+    position: relative;
+}
+
+h1 {
+    font-size: 28px;
+    border-left: 5px solid #465722;
+    padding-left: 9px;
+    margin: 0;
+    line-height: 31px;
+    font-weight: 700;
+}
+
+.subtitulo {
+    font-size: 16px;
+    color: #333;
+    margin: 8px 0 25px 14px;
+}
+
+.modal-historia {
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 35px 45px;
+    position: relative;
+}
+
+.btn-fechar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+}
+
+.icon-close {
+    width: 34px;
+    height: 34px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.titulo-lenda {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #111;
+    margin: 0 35px 20px;
+}
+
+.box-imagem {
+    width: 100%;
+    min-height: 220px;
+    background: #dcdcdc;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.box-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.legenda {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.texto-lenda {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #222;
+    overflow-wrap: anywhere;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+/* Seção de idiomas */
+
+.secao-idiomas {
+    margin-top: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e3e6df;
+}
+
+.titulo-idiomas {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14.5px;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 8px;
+}
+
+.titulo-idiomas img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.subtitulo-idiomas {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 18px;
+}
+
+.botoes-idiomas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-idioma {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 40px;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #111;
+}
+
+.btn-idioma.ativo {
+    background: #c99829;
+    border-color: #c99829;
+    color: #fff;
+}
+
+.btn-idioma img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    border-radius: 3px;
+}
+
+.img-espanha {
+    object-fit: cover !important;
+}
+
+.img-wari {
+    object-fit: contain;
+}
+
+/* Lista de comentários */
+
+.lista-comentarios {
+    margin-top: 28px;
+}
+
+.titulo-lista-comentarios {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e3e6df;
+    font-size: 16px;
+}
+
+.sem-comentarios {
+    padding: 18px 0;
+    color: #62665d;
+    font-size: 14px;
+}
+
+.comentario-item {
+    display: flex;
+    gap: 13px;
+    padding: 18px 0;
+    border-bottom: 1px solid #e3e6df;
+}
+
+.comentario-item:last-child {
+    border-bottom: 0;
+}
+
+.avatar-comentario {
+    display: flex;
+    flex: 0 0 38px;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #465722;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.corpo-comentario {
+    flex: 1;
+    min-width: 0;
+}
+
+.cabecalho-comentario {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+}
+
+.nome-comentario {
+    font-size: 13.5px;
+    font-weight: bold;
+    color: #111;
+}
+
+.data-comentario {
+    font-size: 11.5px;
+    color: #777;
+}
+
+.texto-comentario {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #222;
+    overflow-wrap: anywhere;
+    margin: 6px 0 10px;
+}
+
+/* Botão para excluir comentários */
+
+.form-excluir-comentario {
+    margin: 8px 0 0;
+}
+
+.btn-excluir-comentario {
+    padding: 6px 12px;
+    border: 1px solid #c83c3c;
+    border-radius: 6px;
+    background: #fff;
+    color: #b42323;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-excluir-comentario:hover {
+    background: #fff0f0;
+}
+
+/* Botões inferiores */
+
+.acoes-historia {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.acoes-historia a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 17px;
+    border: 1px solid #465722;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.btn-secundario {
+    background: #fff;
+    color: #465722;
+}
+
+.btn-primario {
+    background: #465722;
+    color: #fff;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid #2467c7;
+    outline-offset: 3px;
+}
+
+/* Ajustes para telas menores */
+
+@media (max-width: 900px) {
+    .conteudo {
+        padding: 45px 24px 55px;
+    }
+
+    .modal-historia {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 500px) {
+    .conteudo {
+        padding: 30px 14px 40px;
+    }
+
+    .modal-historia {
+        padding: 24px 16px;
+    }
+
+    .botoes-idiomas,
+    .acoes-historia {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .botoes-idiomas .btn-idioma,
+    .acoes-historia a {
+        width: 100%;
+    }
+
+    .texto-lenda {
+        text-align: left;
+    }
+
+    .comentario-item {
+        gap: 10px;
+    }
+
+    .avatar-comentario {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+}
