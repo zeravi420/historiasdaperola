@@ -34,7 +34,7 @@ body {
 
 
 .lado-direito {
-    width: 42%;
+    width: 100%;
     background: #4c6123;
     display: flex;
     flex-direction: column;
