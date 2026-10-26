@@ -1,0 +1,1050 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIÁVEIS DE ACESSIBILIDADE */
+:root {
+    --ac-bg: #EAF3E6;
+    --ac-text: #13231d;
+    --ac-surface: #FFFFFF;
+    --ac-border: #465722;
+    --ac-primary: #465722;
+
+    /* Personalização visual do VLibras */
+    --vlibras-btn-focus-visible-outline: 2px solid #000;
+    --vlibras-btn-focus-visible-shadow: 0 0 10px 4px #0a0;
+    --vlibras-btn-hover-filter: brightness(1.2);
+}
+
+/* HTML */
+html {
+    font-size: 100%;
+}
+
+/* BODY */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--ac-bg);
+    color: var(--ac-text);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* TEMA ESCURO */
+html.acessibilidade-escuro {
+    --ac-bg: #1d3d12;
+    --ac-text: #FFFFFF;
+    --ac-surface: #141313;
+    --ac-border: #FFFFFF;
+}
+
+/* ALTO CONTRASTE */
+html.acessibilidade-alto-contraste {
+    --ac-bg: #000000;
+    --ac-text: #dba437;
+    --ac-surface: #0b2408;
+    --ac-border: #d8d1d1;
+    --ac-primary: #465722;
+}
+
+/* TAMANHO DA FONTE */
+html.acessibilidade-fonte-normal {
+    font-size: 100%;
+}
+
+html.acessibilidade-fonte-grande {
+    font-size: 120%;
+}
+
+html.acessibilidade-fonte-muito-grande {
+    font-size: 140%;
+}
+/* TAMANHO DA FONTE */
+html.acessibilidade-fonte-normal {
+    font-size: 100%;
+    zoom: 1;
+}
+
+html.acessibilidade-fonte-grande {
+    font-size: 100%;
+    zoom: 1.15;
+}
+
+html.acessibilidade-fonte-muito-grande {
+    font-size: 100%;
+    zoom: 1.30;
+}
+
+/* CONTAINER PRINCIPAL */
+.container-configuracoes {
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 60px 0 80px;
+}
+
+/* CABEÇALHO */
+.cabecalho-pagina {
+    margin: 40px 0 40px -80px;
+}
+
+.cabecalho-pagina h1 {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--ac-text);
+}
+
+.cabecalho-pagina h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 5px;
+    height: 31px;
+    background-color: var(--ac-primary);
+    border-radius: 1px;
+}
+
+.cabecalho-pagina p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--ac-text);
+}
+
+/* PAINEL */
+.painel-acessibilidade {
+    width: 100%;
+    padding: 30px 35px;
+    background-color: var(--ac-surface);
+    border: 1px solid var(--ac-border);
+    border-radius: 10px;
+    color: var(--ac-text);
+    box-shadow: 0 3px 7px var(--ac-border);
+}
+
+/* GRUPOS */
+.grupo-configuracao {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--ac-border);
+}
+
+.grupo-configuracao:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.grupo-configuracao h2 {
+    margin-bottom: 8px;
+    font-size: 1.4375rem;
+    font-weight: 700;
+    color: var(--ac-text);
+}
+
+.grupo-configuracao p {
+    margin-bottom: 15px;
+    font-size: 1.0625rem;
+    color: var(--ac-text);
+}
+
+/* BOTÕES */
+.botoes-configuracao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.botoes-configuracao button {
+    min-height: 45px;
+    padding: 10px 18px;
+    border: 1px solid var(--ac-border);
+    border-radius: 6px;
+    background-color: var(--ac-bg);
+    color: var(--ac-text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.botoes-configuracao button:hover {
+    transform: translateY(-1px);
+}
+
+.botoes-configuracao button.ativo {
+    outline: 3px solid var(--ac-primary);
+    outline-offset: 2px;
+}
+
+/* RESTAURAR CONFIGURAÇÕES */
+.restaurar {
+    padding-top: 5px;
+    border-bottom: none;
+}
+
+.botao-restaurar {
+    min-height: 45px;
+    padding: 10px 18px;
+    border: 1px solid var(--ac-border);
+    border-radius: 6px;
+    background-color: #465722;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+html.acessibilidade-escuro .botao-restaurar,
+html.acessibilidade-alto-contraste .botao-restaurar {
+    background-color: #dba437;
+    color: #000000;
+}
+
+.botao-restaurar:hover {
+    outline: 3px solid var(--ac-primary);
+    outline-offset: 2px;
+}
+
+/* STATUS */
+.acessibilidade-status {
+    margin-top: 10px;
+    padding: 14px;
+    border: 1px solid var(--ac-border);
+    border-radius: 6px;
+    background-color: var(--ac-bg);
+    color: var(--ac-text);
+    font-size: 0.9375rem;
+}
+
+/* FOCO */
+button:focus-visible {
+    outline: 3px solid var(--ac-primary);
+    outline-offset: 3px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 1000px) {
+    .container-configuracoes {
+        width: 90%;
+    }
+
+    .cabecalho-pagina h1 {
+        font-size: 28px;
+        line-height: 31px;
+    }
+
+    .cabecalho-pagina p {
+        margin-left: 13px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 750px) {
+    .container-configuracoes {
+        width: 92%;
+        padding-top: 35px;
+    }
+
+    .painel-acessibilidade {
+        padding: 25px;
+    }
+
+    .cabecalho-pagina h1::before {
+        height: 35px;
+    }
+
+    .cabecalho-pagina p {
+        font-size: 1.125rem;
+    }
+
+    .grupo-configuracao h2 {
+        font-size: 1.3125rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-configuracoes {
+        width: 94%;
+        padding-top: 30px;
+    }
+
+    .cabecalho-pagina h1 {
+        font-size: 24px;
+    }
+
+    .cabecalho-pagina h1::before {
+        width: 4px;
+        height: 31px;
+    }
+
+    .cabecalho-pagina p {
+        font-size: 14px;
+    }
+
+    .painel-acessibilidade {
+        padding: 20px;
+    }
+
+    .grupo-configuracao h2 {
+        font-size: 1.25rem;
+    }
+
+    .grupo-configuracao p {
+        font-size: 1rem;
+    }
+
+    .botoes-configuracao {
+        flex-direction: column;
+    }
+
+    .botoes-configuracao button,
+    .botao-restaurar {
+        width: 100%;
+    }
+}
+
+/* MOVIMENTO REDUZIDO */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* VLIBRAS: CAMADA DE POSICIONAMENTO */
+[vw].enabled {
+    position: fixed !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    z-index: 999999 !important;
+}
+
+[vw-access-button] {
+    z-index: 999999 !important;
+}
+
+
+
+
+/* ==================================
+   ACESSIBILIDADE - INICIO ADMIN
+================================== */
+
+/* MODO ESCURO */
+html.acessibilidade-escuro body {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+html.acessibilidade-escuro .conteudo {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+
+
+html.acessibilidade-escuro .titulo h1,
+html.acessibilidade-escuro .boas-vindas,
+html.acessibilidade-escuro .conteudo > h2,
+html.acessibilidade-escuro .card h3,
+html.acessibilidade-escuro .texto-card p,
+html.acessibilidade-escuro .card-gerenciar > p {
+    color: #ffffff !important;
+}
+
+html.acessibilidade-escuro .card {
+    background-color: #070707 !important;
+    border-color: #ffff !important;
+    box-shadow: none !important;
+}
+
+html.acessibilidade-escuro .card-mito h3,
+html.acessibilidade-escuro .card-gerenciar h3 {
+    color: #dba437 !important;
+}
+
+html.acessibilidade-escuro .btn-historias {
+    color: #ffffff !important;
+    border: 1px solid #ffff !important;
+    box-shadow: none !important;
+    background-color: #1d3d12;
+}
+
+/* ALTO CONTRASTE */
+html.acessibilidade-alto-contraste body,
+html.acessibilidade-alto-contraste .conteudo {
+    background-color: #000000 !important;
+    color: #dba437 !important;
+}
+
+html.acessibilidade-alto-contraste .titulo {
+    border-left-color: #3e5919 !important;
+}
+
+html.acessibilidade-alto-contraste .titulo h1,
+html.acessibilidade-alto-contraste .boas-vindas,
+html.acessibilidade-alto-contraste .conteudo > h2,
+html.acessibilidade-alto-contraste .card h3,
+html.acessibilidade-alto-contraste .texto-card p,
+html.acessibilidade-alto-contraste .card-gerenciar > p {
+    color: #dba437 !important;
+}
+
+html.acessibilidade-alto-contraste .card {
+    background-color: #0b2408 !important;
+    color: #dba437 !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: none !important;
+}
+
+html.acessibilidade-alto-contraste .card-mito h3,
+html.acessibilidade-alto-contraste .card-gerenciar h3 {
+    color: #dba437 !important;
+}
+
+html.acessibilidade-alto-contraste .btn-historias {
+    background-color: #000000 !important;
+    color: #dba437 !important;
+    border: 1px solid #ffffff !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+/* REMOVE EFEITOS COLORIDOS DOS CARTÕES */
+html.acessibilidade-escuro .card:hover,
+html.acessibilidade-alto-contraste .card:hover {
+    transform: none;
+    box-shadow: none !important;
+}
+
+/* 
+   ACESSIBILIDADE - PERFIL ADM
+    */
+
+/* MODO ESCURO */
+html.acessibilidade-escuro body .content {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+html.acessibilidade-escuro body .page-header h1,
+html.acessibilidade-escuro body .page-header .subtitle,
+html.acessibilidade-escuro body .profile-card h2,
+html.acessibilidade-escuro body .info-label,
+html.acessibilidade-escuro body .info-value {
+    color: #FFFFFF;
+}
+
+html.acessibilidade-escuro body .profile-card,
+html.acessibilidade-escuro body  {
+    background-color: #070707;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    box-shadow: none;
+}
+html.acessibilidade-escuro body .profile-card {
+ border: 1px solid #FFFFFF;
+}
+
+html.acessibilidade-escuro body .title-mark {
+    background-color: #465722;
+}
+
+html.acessibilidade-escuro body .profile-btn {
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: none;
+}
+
+html.acessibilidade-escuro body .profile-btn-primary {
+    background-color: #1d3d12;
+    color: #FFFFFF;
+}
+
+html.acessibilidade-escuro body .profile-btn-secondary {
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+/* ALTO CONTRASTE */
+html.acessibilidade-alto-contraste body .content {
+    background-color: #000000;
+    color: #dba437;
+}
+
+html.acessibilidade-alto-contraste body .page-header h1,
+html.acessibilidade-alto-contraste body .page-header .subtitle,
+html.acessibilidade-alto-contraste body .profile-card h2,
+html.acessibilidade-alto-contraste body .info-label,
+html.acessibilidade-alto-contraste body .info-value {
+    color: #dba437;
+}
+
+html.acessibilidade-alto-contraste body .profile-card {
+    background-color: #0b2408;
+    color: #dba437;
+    border: 1px solid #FFFFFF;
+    box-shadow: none;
+}
+
+html.acessibilidade-alto-contraste body .info-item {
+    background-color: #0b2408;
+    color: #dba437;
+    border: none;
+    box-shadow: none;
+}
+
+html.acessibilidade-alto-contraste body .title-mark {
+    background-color: #3e5919;
+}
+
+html.acessibilidade-alto-contraste body .profile-btn {
+    background-color: #000000;
+    color: #dba437;
+    border: 1px solid #FFFFFF;
+    box-shadow: none;
+}
+
+html.acessibilidade-alto-contraste body .profile-btn-primary {
+    border-color: #dba437;
+}
+
+/* FONTE GRANDE */
+html.acessibilidade-fonte-grande body .content {
+    font-size: 120%;
+}
+
+/* FONTE MUITO GRANDE */
+html.acessibilidade-fonte-muito-grande body .content {
+    font-size: 140%;
+}
+/* ==========================================
+   ACESSIBILIDADE - EDITAR PERFIL ADM
+   ========================================== */
+
+/* MODO ESCURO */
+html.acessibilidade-escuro body input,
+html.acessibilidade-escuro body select,
+html.acessibilidade-escuro body textarea {
+    background-color: #070707;
+    color: #FFFFFF;
+}
+
+/* Campo selecionado */
+html.acessibilidade-escuro body input:focus,
+html.acessibilidade-escuro body select:focus,
+html.acessibilidade-escuro body textarea:focus {
+    background-color: #070707;
+    color: #FFFFFF;
+    border-color: #dba437;
+}
+
+/* ==========================================
+   ALTERAR SENHA ADM - ACESSIBILIDADE
+   ========================================== */
+
+/* MODO ESCURO - FUNDO DA PÁGINA */
+html.acessibilidade-escuro body .content {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+}
+
+/* CAIXA PRINCIPAL - REMOVE O FUNDO BRANCO */
+html.acessibilidade-escuro body .password-card {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+/* TÍTULOS */
+html.acessibilidade-escuro body .password-card h2,
+html.acessibilidade-escuro body .page-header h1,
+html.acessibilidade-escuro body .page-header .subtitle {
+    color: #FFFFFF !important;
+}
+
+/* LINHA DO TÍTULO */
+html.acessibilidade-escuro body .section-line {
+    border-color: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+}
+
+/* RÓTULOS DOS CAMPOS */
+html.acessibilidade-escuro body .password-group label {
+    color: #FFFFFF !important;
+}
+
+/* CAIXAS DE DIGITAÇÃO VERDES */
+html.acessibilidade-escuro body .password-input {
+    background-color: #1d3d12 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+/* QUANDO CLICAR PARA DIGITAR */
+html.acessibilidade-escuro body .password-input:focus {
+    background-color: #1d3d12 !important;
+    color: #FFFFFF !important;
+    border-color: #dba437 !important;
+    outline: 2px solid #dba437 !important;
+}
+
+/* BOTÃO MOSTRAR/OCULTAR SENHA */
+html.acessibilidade-escuro body .password-toggle {
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+
+/* BOTÃO SALVAR ALTERAÇÕES */
+html.acessibilidade-escuro body .password-btn-primary {
+    background-color: #1d3d12 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+}
+
+/* ALTO CONTRASTE */
+html.acessibilidade-alto-contraste body .password-card {
+    background-color: #000000 !important;
+    color: #dba437 !important;
+    border: 1px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+
+html.acessibilidade-alto-contraste body .password-card h2,
+html.acessibilidade-alto-contraste body .password-group label {
+    color: #dba437 !important;
+}
+
+html.acessibilidade-alto-contraste body .password-input {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+}
+
+html.acessibilidade-alto-contraste body .password-btn-primary {
+    background-color: #000000 !important;
+    color: #dba437 !important;
+    border: 2px solid #FFFFFF !important;
+}
+/* ÍCONE DO OLHO - AMARELO DOURADO */
+html.acessibilidade-escuro .password-toggle .eye-icon {
+    filter: brightness(0) saturate(100%)
+            invert(76%) sepia(47%) saturate(623%)
+            hue-rotate(4deg) brightness(95%) contrast(90%);
+}
+/* ALTO CONTRASTE - CAIXA GRANDE ALTERAR SENHA */
+html.acessibilidade-alto-contraste body .password-card {
+    background-color: #0b2408 !important;
+    color: #dba437 !important;
+    border: 1px solid #FFFFFF !important;
+    box-shadow: none !important;
+}
+/* TÍTULOS */
+html.acessibilidade-alto-contraste body .password-card h2,
+html.acessibilidade-alto-contraste body .page-header h1,
+html.acessibilidade-alto-contraste body .page-header .subtitle {
+    color: #dba437 !important;
+}
+/* ALTERAR SENHA — COR FIXA DOS CAMPOS */
+
+/* Modo escuro */
+html.acessibilidade-escuro body .password-card .password-input,
+html.acessibilidade-escuro body .password-card .password-input:hover,
+html.acessibilidade-escuro body .password-card .password-input:focus,
+html.acessibilidade-escuro body .password-card .password-input:active {
+    background: #1d3d12 !important;
+    background-color: #1d3d12 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+/* Alto contraste */
+html.acessibilidade-alto-contraste body .password-card .password-input,
+html.acessibilidade-alto-contraste body .password-card .password-input:hover,
+html.acessibilidade-alto-contraste body .password-card .password-input:focus,
+html.acessibilidade-alto-contraste body .password-card .password-input:active {
+    background: #1d3d12 !important;
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+    border: 1px solid #FFFFFF !important;
+    outline: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+/* SAIR ADM - CONFIGURAÇÕES */
+.opcao-administrador.opcao-sair {
+    margin: 0;
+    padding: 25px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.opcao-administrador.opcao-sair .opcao-titulo h2 {
+    margin: 0;
+}
+
+.opcao-administrador.opcao-sair p {
+    margin-bottom: 20px;
+}
+
+.opcao-administrador.opcao-sair .opcao-link {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--ac-border);
+}
+
+/* MODO ESCURO */
+html.acessibilidade-escuro .opcao-administrador.opcao-sair {
+    background-color: #101010;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+
+/* =========================================
+   MODO ESCURO - SAIR ADM
+========================================= */
+
+/* Cartão Sair ADM nas configurações */
+html.acessibilidade-escuro .opcao-administrador.opcao-sair {
+    background-color: #101010 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+html.acessibilidade-escuro .opcao-administrador.opcao-sair .opcao-titulo h2,
+html.acessibilidade-escuro .opcao-administrador.opcao-sair p,
+html.acessibilidade-escuro .opcao-administrador.opcao-sair .opcao-link {
+    color: #ffffff !important;
+}
+
+/* Caixa de confirmação - somente página Sair ADM */
+html.acessibilidade-escuro body:has(.modal) .modal {
+    background-color: #070707
+ !important;
+    box-shadow: 0 3px 7px var(--ac-border) !important;
+    color: #ffffff !important;
+}
+
+/* Título e texto da caixa */
+html.acessibilidade-escuro body:has(.modal) .modal h2,
+html.acessibilidade-escuro body:has(.modal) .modal p {
+    color: #ffffff !important;
+}
+
+
+/* Botão Cancelar: transparente com borda branca */
+html.acessibilidade-escuro body:has(.modal) .modal .cancelar {
+    background-color: transparent !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+html.acessibilidade-escuro body:has(.modal) .modal .cancelar a {
+    color: #ffffff !important;
+}
+
+/* Botão Sair: preto com borda branca */
+html.acessibilidade-escuro body:has(.modal) .modal .Sair {
+    background-color: #1d3d12!important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+html.acessibilidade-escuro body:has(.modal) .modal .Sair a {
+    color: #ffffff !important;
+}
+
+/* Ícone de saída */
+html.acessibilidade-escuro body:has(.modal) .modal .icone-saida {
+    background-color: #000000 !important;
+    border: 1px solid #555555 !important;
+    box-shadow: none !important;
+}
+
+/* Traço ao lado do título Sair */
+html.acessibilidade-escuro body:has(.modal) .titulo h1 {
+    border-left: 5px solid #3e5919 !important;
+    color: #ffffff !important;
+}
+
+/* Descrição abaixo do título */
+html.acessibilidade-escuro body:has(.modal) .descricao {
+    color: #ffffff !important;
+}
+
+
+/* ========================================
+   SAIR ADM - ALTO CONTRASTE
+   ======================================== */
+/* Título e texto da caixa */
+html.acessibilidade-alto-contraste body:has(.modal) .modal h2,
+html.acessibilidade-alto-contraste body:has(.modal) .modal p {
+    color: #dba437 !important;
+}
+/*alto contraste*/
+/* Caixa de confirmação - somente página Sair ADM */
+html.acessibilidade-alto-contraste body:has(.modal) .modal {
+    background-color: #0b2408
+ !important;
+    box-shadow: 0 3px 7px var(--ac-border) !important;
+    color: #ffffff !important;
+}
+/* ALTO CONTRASTE */
+html.acessibilidade-alto-contraste .opcao-administrador.opcao-sair {
+    background-color: #000000;
+    color: #e5a323;
+    border-color: #e5a323;
+}
+html.acessibilidade-alto-contraste .modal-sair .modal-content {
+    background-color: #000000;
+    color: #e5a323;
+    border-color: #e5a323;
+}
+
+
+/* ACESSIBILIDADE - CAIXA DE CONFIRMAÇÃO SAIR ADM */
+
+html.acessibilidade-alto-contraste .modal {
+    background-color: #0b2408 !important;
+    box-shadow: 0 3px 7px var(--ac-border) !important;
+    color: #ffffff !important;
+}
+
+html.acessibilidade-alto-contraste .modal h2,
+html.acessibilidade-alto-contraste .modal p {
+    color: #e5a323 !important;
+}
+
+/* CANCELAR: FUNDO TRANSPARENTE E BORDA BRANCA */
+html.acessibilidade-alto-contraste .modal .cancelar {
+    background-color: transparent !important;
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* SAIR: FUNDO PRETO E BORDA AMARELA */
+html.acessibilidade-alto-contraste .modal .Sair {
+    background-color: #000000 !important;
+    border: 1px solid #e5a323 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+/* TEXTOS DOS LINKS */
+html.acessibilidade-alto-contraste .modal .cancelar a,
+html.acessibilidade-alto-contraste .modal .Sair a {
+    color: #e5a323!important;
+}
+
+/* ÍCONE DE SAÍDA */
+html.acessibilidade-alto-contraste .modal .icone-saida {
+    background-color: #000000 !important;
+    border-color: #e5a323 !important;
+}
+
+/* FORÇAR TRAÇO AMARELO DO SAIR ADM NO ALTO CONTRASTE */
+html.acessibilidade-alto-contraste .opcao-sair .opcao-marca {
+    background: #e5a323 !important;
+    background-color: #e5a323 !important;
+    border-left: 5px solid #e5a323 !important;
+    border-color: #e5a323 !important;
+}
+
+/* CASO O TRAÇO SEJA CRIADO PELO TÍTULO */
+html.acessibilidade-alto-contraste .opcao-sair .opcao-titulo::before {
+    content: "" !important;
+    display: block !important;
+    width: 5px !important;
+    height: 28px !important;
+    background: #e5a323 !important;
+    border: none !important;
+}
+
+/* Traço amarelo ao lado do título Sair */
+html.acessibilidade-alto-contraste body:has(.modal) .titulo h1 {
+    border-left: 5px solid #3e5919 !important;
+    color: #e5a323 !important;
+}
+
+/* descrição do modal */
+html.acessibilidade-alto-contraste .descricao {
+    color: #e5a323 !important;
+}
+html.acessibilidade-alto-contraste body:has(.modal) .descricao {
+    color: #e5a323 !important;
+}
+html.acessibilidade-alto-contraste body:has(.modal) .modal .cancelar a {
+    color: #e5a323 !important;
+}
+html.acessibilidade-alto-contraste body:has(.modal) .modal .Sair a {
+    color: #e5a323 !important;
+}
+
+html.acessibilidade-alto-contraste body:has(.modal) .modal .Sair {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   SOBRE NÓS - ADMINISTRADOR
+   ======================================== */
+
+/* MODO ESCURO */
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) {
+    color: #ffffff;
+}
+
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .cabecalho-pagina h1,
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .cabecalho-pagina p,
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .titulo-equipe h2,
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .titulo-equipe p {
+    color: #ffffff !important;
+    position: relative;
+    top: -30px;
+}
+
+html.acessibilidade-escuro body:has(.secao-equipe) {
+    background-color: #121212 !important;
+}
+
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .motivo,
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .integrante {
+    background-color: #1e1e1e !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .motivo h2,
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .motivo p,
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .informacoes-integrante h3,
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .funcao {
+    color: #ffffff !important;
+}
+
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .foto-integrante {
+    background-color: #292929 !important;
+    border-color: #555555 !important;
+}
+
+html.acessibilidade-escuro .conteudo:has(.secao-equipe) .cabecalho-pagina h1::before {
+    background-color: #465722!important;
+}
+
+
+/* ALTO CONTRASTE */
+html.acessibilidade-alto-contraste body:has(.secao-equipe) {
+    background-color: #000000 !important;
+    color: #e5a323 !important;
+}
+
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .cabecalho-pagina h1,
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .cabecalho-pagina p,
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .titulo-equipe h2,
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .titulo-equipe p {
+    color: #e5a323 !important;
+    position: relative;
+    top: -20px;
+}
+
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .motivo,
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .integrante {
+    background-color: #0b2408 !important;
+    border: 1px solid #ffffff !important;
+    color: #e5a323 !important;
+    box-shadow: none !important;
+}
+
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .motivo h2,
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .motivo p,
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .informacoes-integrante h3,
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .funcao {
+    color: #e5a323 !important;
+}
+
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .foto-integrante {
+    background-color: #000000 !important;
+    border: 1px solid #e5a323 !important;
+}
+
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .cabecalho-pagina h1::before {
+    background-color: #3e5919 !important;
+}
+
+html.acessibilidade-alto-contraste .conteudo:has(.secao-equipe) .integrante:hover {
+    transform: none;
+    box-shadow: none !important;
+}
+
+/* CORREÇÃO DEFINITIVA DO CABEÇALHO SOBRE NÓS */
+body:has(.secao-equipe) main.conteudo {
+    position: relative !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    padding-left: 49px !important;
+}
+
+body:has(.secao-equipe) .cabecalho-pagina {
+    position: relative !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    transform: none !important;
+}
+
+body:has(.secao-equipe) .cabecalho-pagina h1 {
+    position: relative !important;
+    left: 0 !important;
+    margin-left: 0 !important;
+    transform: none !important;
+    top: -20px; /* move 20px para cima */
+}
+
+@media (max-width: 750px) {
+    body:has(.secao-equipe) main.conteudo {
+        padding-left: 4% !important;
+    }
+}
+
+
+/* SOBRE NÓS - SUBIR SOMENTE O SUBTÍTULO */
+html:not(.acessibilidade-escuro):not(.acessibilidade-alto-contraste) body:has(.secao-equipe) .cabecalho-pagina > p {
+    position: relative;
+    top: -30px;
+}
+

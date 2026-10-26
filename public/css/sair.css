@@ -1,0 +1,443 @@
+/* Configurações gerais da página e tipografia. */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Área do fundo da tela. */
+body {
+    width: 100%;
+    height: 100%;
+    background: #eef7e9;
+    color: #111;
+}
+
+
+
+
+
+/* Área principal da página de saída. */
+.conteudo {
+    position: relative;
+    width: 100%;
+    padding: 110px 49px 80px;
+}
+
+
+
+
+
+.titulo {
+    position: absolute;
+    top: 110px;
+    left: 34px;
+}
+
+.titulo h1 {
+    padding-left: 9px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 31px;
+    border-left: 5px solid #465722;
+    color: #111;
+    margin: 0;
+}
+
+.descricao {
+    position: absolute;
+    top: 148px;
+    left: 34px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #222;
+    margin-left: 14px;
+}
+
+
+
+.overlay {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 95px 20px 35px;
+    background: transparent;
+    pointer-events: none;
+}
+
+
+.modal {
+    width: 440px;
+    max-width: 100%;
+    min-height: 230px;
+    padding: 40px 40px 30px;
+    background: #ffffff;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+    box-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.35),
+        0 1px 2px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    pointer-events: auto;
+    margin: 0;
+    transform: none;
+}
+
+.icone-saida {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #dff5f3;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.18);
+}
+
+
+
+
+.icon-saida {
+    width: 150px;
+    height: 150px;
+
+    object-fit: contain;
+}
+
+
+
+
+.modal h2 {
+    margin: 0 0 18px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 24px;
+
+    color: #111;
+}
+
+
+
+
+.modal p {
+    margin: 0;
+
+    font-size: 14px;
+    line-height: 18px;
+
+    color: #222;
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 34px;
+}
+
+.cancelar,
+.Sair {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    min-width: 72px;
+    height: 32px;
+    padding: 0 8px;
+    border: none;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    transition: background-color 0.2s ease;
+}
+
+.cancelar {
+    background: #ffffff;
+    color: #c79b21;
+}
+
+.cancelar:hover {
+    background: #f5f5f5;
+}
+
+.Sair {
+    background: #c79b21;
+    color: #ffffff;
+}
+
+.Sair:hover {
+    background: #b38b1d;
+}
+
+
+
+
+
+footer {
+    flex-shrink: 0;
+}
+
+
+
+
+/* Ajustes responsivos para tablets. */
+@media (min-width: 481px) and (max-width: 1100px) {
+
+    .conteudo {
+        position: relative;
+
+        padding: 90px 40px 60px;
+    }
+
+
+
+
+    .titulo {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        margin-bottom: 8px;
+    }
+
+    .titulo h1 {
+        font-size: 36px;
+        line-height: 31px;
+        padding-left: 9px;
+        font-weight: 700;
+        border-left: 9px solid #465722;
+        margin: 0;
+    }
+
+
+
+
+    .descricao {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0;
+        font-size: 25px;
+        line-height: 23px;
+    }
+
+
+
+    .overlay {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 30px 0 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal {
+        width: 620px;
+        max-width: 100%;
+        min-height: 0;
+        padding: 40px 45px 35px;
+        border-radius: 10px;
+        margin: 0;
+        transform: none;
+    }
+
+    .icone-saida {
+        width: 125px;
+        height: 125px;
+
+        margin: 0 auto 22px;
+    }
+
+    .icon-saida {
+        width: 185px;
+        height: 185px;
+    }
+
+
+
+
+    .modal h2 {
+        margin-bottom: 22px;
+
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+
+
+
+    .modal p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+
+
+
+    .botoes {
+        margin-top: 45px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cancelar,
+    .Sair {
+        width: 100px;
+        height: 50px;
+
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+/* Ajustes responsivos para celulares. */
+@media (max-width: 480px) {
+
+    .conteudo {
+        position: relative;
+        padding: 80px 16px 45px;
+    }
+
+
+
+
+    .titulo {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        margin-bottom: 6px;
+    }
+
+    .titulo h1 {
+        font-size: 28px;
+        line-height: 31px;
+        padding-left: 9px;
+        font-weight: 700;
+        border-left: 5px solid #465722;
+        margin: 0;
+    }
+
+
+
+
+    .descricao {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        margin: 0;
+
+        font-size: 13px;
+        line-height: 18px;
+    }
+
+
+
+
+    .overlay {
+        position: relative;
+
+        top: auto;
+        left: auto;
+
+        width: 100%;
+        height: auto;
+
+        padding: 30px 0 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .overlay {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 25px 0 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icone-saida {
+        width: 65px;
+        height: 65px;
+
+        margin: 0 auto 10px;
+    }
+
+    .icon-saida {
+        width: 90px;
+        height: 90px;
+    }
+
+
+
+
+    .modal h2 {
+        margin-bottom: 10px;
+
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+
+
+
+    .modal p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+
+
+
+    .botoes {
+        margin-top: 50px;
+        gap: 9px;
+    }
+
+    .cancelar,
+    .Sair {
+        width: 70px;
+        height: 29px;
+
+        font-size: 11px;
+    }
+}
