@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* ==========================================
+   CONFIGURAÇÕES GERAIS
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+
+body {
+    background: #eef6eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==========================================
+   CARD PRINCIPAL
+========================================== */
+
+.container {
+    width: 900px;
+    height: 500px;
+    display: flex;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================
+   FORMULÁRIO
+========================================== */
+
+.formulario {
+    width: 58%;
+    padding: 40px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formulario h1 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.formulario p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 12px;
+    font-size: 20px;
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    background: #f8f8f8;
+    font-size: 16px;
+}
+
+button {
+    width: 180px;
+    height: 42px;
+    margin: 30px auto 10px;
+    display: block;
+    background: #c99a22;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+button:hover {
+    background: #a57d17;
+}
+
+/* ==========================================
+   ÁREA VERDE
+========================================== */
+
+.lado-direito {
+    width: 42%;
+    background: #4c6123;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.lado-direito img {
+    width: 300px;
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+
+.lado-direito h2 {
+    font-family: 'Kaushan Script', cursive;
+    color: #dba437;
+    font-size: 24px;
+    font-style: italic;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.lado-direito p {
+    font-size: 14px;
+    color: #f1f1f1;
+}
+
+/* APROXIMAR TÍTULO E SUBTÍTULO DA LOGO */
+
+.lado-direito h2,
+.lado-direito p {
+    transform: translateY(-75px);
+}
+
+
+/* ==========================================
+   TABLETS
+   MESMO DESIGN DO COMPUTADOR
+========================================== */
+
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    body {
+        padding: 20px;
+    }
+
+    /* CARD HORIZONTAL */
+
+    .container {
+        width: 95%;
+        max-width: 900px;
+        height: 450px;
+        flex-direction: row;
+    }
+
+    /* FORMULÁRIO À ESQUERDA */
+
+    .formulario {
+        order: 1;
+        width: 58%;
+        height: 100%;
+        padding: 25px 35px;
+        min-height: 0;
+    }
+
+    .formulario h1 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    .formulario p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+
+    label {
+        font-size: 17px;
+    }
+
+    input {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 150px;
+        height: 40px;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+
+    /* ÁREA VERDE À DIREITA */
+
+    .lado-direito {
+        order: 2;
+        width: 42%;
+        height: 100%;
+        min-height: 0;
+        padding: 15px;
+        flex: none;
+    }
+
+    .lado-direito img {
+        width: 300px;
+        max-width: 90%;
+        margin-bottom: 5px;
+    }
+
+    .lado-direito h2 {
+        font-size: 20px;
+    }
+
+    .lado-direito p {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+        min-height: 100vh;
+    }
+
+    /* CARD VERTICAL */
+
+    .container {
+        width: 88%;
+        max-width: 340px;
+        height: auto;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    /* ÁREA VERDE EM CIMA */
+
+    .lado-direito {
+        order: 1;
+        width: 100%;
+        min-height: 180px;
+        padding: 12px 10px;
+        flex: none;
+    }
+
+    .lado-direito img {
+        width: 165px;
+        max-width: 100%;
+        margin: 0 0 -13px;
+    }
+
+    .lado-direito h2 {
+        font-size: 17px;
+        margin: 0 0 1px;
+        line-height: 1.1;
+        transform: translateY(-25px);
+    }
+
+    .lado-direito p {
+        font-size: 10px;
+        margin: 0;
+        line-height: 1.1;
+        transform: translateY(-25px);
+    }
+
+    /* FORMULÁRIO EMBAIXO */
+
+    .formulario {
+        order: 2;
+        width: 100%;
+        min-height: 330px;
+        padding: 35px 20px;
+    }
+
+    .formulario h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .formulario p {
+        font-size: 12px;
+        line-height: 1.4;
+        margin-bottom: 22px;
+    }
+
+    label {
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+    }
+
+    input {
+        width: 100%;
+        height: 38px;
+        font-size: 13px;
+    }
+
+    button {
+        width: 130px;
+        height: 36px;
+        font-size: 14px;
+        margin: 22px auto 0;
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES MENORES
+========================================== */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .lado-direito {
+        min-height: 165px;
+        padding: 10px;
+    }
+
+    .lado-direito img {
+        width: 145px;
+    }
+
+    .formulario {
+        min-height: 320px;
+        padding: 30px 16px;
+    }
+
+}

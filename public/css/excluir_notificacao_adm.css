@@ -1,0 +1,427 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+* {
+    background: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================
+   ESTRUTURA PRINCIPAL
+========================================== */
+
+.conteudo {
+    position: relative;
+    width: 100%;
+    min-height: 0;
+    padding: 110px 49px 60px;
+}
+
+.titulo {
+    position: absolute;
+    top: 110px;
+    left: 34px;
+}
+
+.titulo h1 {
+    padding-left: 9px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 31px;
+    border-left: 5px solid #465722;
+    color: #111;
+}
+
+.descricao {
+    position: absolute;
+    top: 145px;
+    left: 34px;
+    margin: 8px 0 0 14px;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #222;
+}
+
+/* ==========================================
+   MODAL DE CONFIRMAÇÃO
+========================================== */
+
+.overlay {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px 50px;
+    background: transparent;
+    pointer-events: none;
+}
+
+.modal {
+    width: 440px;
+    max-width: 100%;
+    min-height: 230px;
+    margin: 0 auto;
+    padding: 40px 40px 30px;
+
+    background: #ffffff;
+    border: 1px solid #d2d2d2;
+    border-radius: 5px;
+
+    box-shadow:
+        0 3px 5px rgba(0, 0, 0, 0.35),
+        0 1px 2px rgba(0, 0, 0, 0.15);
+
+    text-align: center;
+    pointer-events: auto;
+}
+
+.modal h2 {
+    margin-bottom: 22px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #111;
+}
+
+.modal p {
+    font-size: 14px;
+    line-height: 20px;
+    color: #222;
+}
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+.botoes {
+    width: 100%;
+    margin-top: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.botoes a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.cancelar,
+.excluir {
+    width: 80px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    transition: 0.2s ease;
+}
+
+.cancelar {
+    background: #ffffff;
+    color: #c79b21;
+    font-size: 12px;
+}
+
+.cancelar:hover {
+    background: #f5f5f5;
+    color: #c79b21;
+}
+
+.excluir {
+    background: #c79b21;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.excluir:hover {
+    background: #b88b11;
+    color: #ffffff;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .conteudo {
+        padding: 250px 35px 70px;
+    }
+
+    .titulo {
+        top: 85px;
+        left: 35px;
+    }
+
+    .descricao {
+        top: 125px;
+        left: 35px;
+    }
+
+    .overlay {
+        padding: 25px 25px 40px;
+    }
+
+    .modal {
+        width: 650px;
+        max-width: 90%;
+        min-height: 320px;
+        padding: 42px 48px 35px;
+        border-radius: 6px;
+    }
+
+    .modal h2 {
+        margin-bottom: 24px;
+        font-size: 28px;
+        line-height: 35px;
+    }
+
+    .modal p {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .botoes {
+        margin-top: 42px;
+    }
+
+    .cancelar,
+    .excluir {
+        width: 100px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 480px) {
+
+    .titulo {
+        top: 90px;
+        left: 20px;
+        right: 20px;
+        z-index: 3;
+    }
+
+    .titulo h1 {
+        font-size: 22px;
+        line-height: 27px;
+    }
+
+    .descricao {
+        top: 125px;
+        left: 20px;
+        right: 20px;
+        z-index: 3;
+        font-size: 14px;
+    }
+
+    .overlay {
+        z-index: 1;
+        padding: 75px 15px 55px;
+    }
+
+    .modal {
+        width: 100%;
+        max-width: 310px;
+        min-height: 180px;
+        padding: 22px 17px 20px;
+        border-radius: 7px;
+    }
+
+    .modal h2 {
+        margin-bottom: 12px;
+        font-size: 17px;
+        line-height: 21px;
+    }
+
+    .modal p {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .botoes {
+        margin-top: 22px;
+    }
+
+}
+
+/* ==========================================
+   CELULARES MENORES
+========================================== */
+
+@media (max-width: 390px) {
+
+    .conteudo {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .titulo {
+        top: 75px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .titulo h1 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .descricao {
+        top: 102px;
+        left: 16px;
+        right: 16px;
+    }
+
+    .overlay {
+        padding-top: 85px;
+        padding-bottom: 50px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .modal {
+        max-width: 285px;
+        min-height: 180px;
+        padding: 20px 14px;
+    }
+
+    .modal h2 {
+        font-size: 17px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+
+    .modal p {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .botoes {
+        margin-top: 17px;
+    }
+
+    .cancelar,
+    .excluir {
+        width: 62px;
+        height: 26px;
+        font-size: 9px;
+    }
+}
+
+/* ==========================================
+   CELULARES MUITO PEQUENOS
+========================================== */
+
+@media (max-width: 320px) {
+
+    .conteudo {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .titulo {
+        top: 70px;
+        left: 12px;
+        right: 12px;
+    }
+
+    .titulo h1 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .descricao {
+        top: 104px;
+        left: 12px;
+        right: 12px;
+        font-size: 14px;
+    }
+
+    .overlay {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .modal {
+        max-width: 270px;
+        min-height: 160px;
+        padding: 17px 14px 14px;
+    }
+
+    .modal h2 {
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 9px;
+    }
+
+    .modal p {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .botoes {
+        margin-top: 15px;
+    }
+
+    .cancelar,
+    .excluir {
+        width: 60px;
+        height: 25px;
+        font-size: 9px;
+    }
+}
+
+/* ==========================================
+   TELAS GRANDES
+========================================== */
+
+@media (min-width: 1200px) {
+
+    .conteudo {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .titulo {
+        left: 45px;
+    }
+
+    .descricao {
+        left: 45px;
+    }
+}
+
+@media (min-width: 1600px) {
+
+    .conteudo {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+
+    .titulo {
+        left: 60px;
+    }
+
+    .descricao {
+        left: 60px;
+    }
+}
